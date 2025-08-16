@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.navbar {
+  @apply h-full  flex flex-col items-center justify-start p-2 gap-2;
+}

@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.layout {
+  @apply flex flex-col h-screen;
+}
+
+.layout-header {
+  @apply flex items-center justify-between w-full h-16;
+}
+
+.layout-body {
+  @apply flex flex-row h-full;
+}
+
+.layout-content {
+  @apply flex-1;
+}
