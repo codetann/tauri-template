@@ -1,72 +1,40 @@
-import { Button, Input, Select, SelectItem, Textarea } from "@heroui/react";
-import styles from "./AudioPage.module.css";
+import { useEffect } from "react";
+import {
+  AudioList,
+  AudioFloatingInput,
+  AudioSampleDataLoader,
+} from "@/components";
+import { useAudioStore } from "@/state/audioStore";
 
 export default function AudioPage() {
+  const { loadModels } = useAudioStore();
+
+  useEffect(() => {
+    // Load models when component mounts
+    loadModels();
+  }, [loadModels]);
+
   return (
-    <div>
-      <FloatingInput />
-    </div>
-  );
-}
+    <div className="w-full h-full relative">
+      {/* Sample Data Loader for Development */}
+      <AudioSampleDataLoader />
 
-function FloatingInput() {
-  return (
-    <div className={STYLES["floating-input"]}>
-      <textarea
-        placeholder="Enter your text here"
-        className={STYLES["textarea"]}
-      />
-      <div className={STYLES["footer"]}>
-        <Select
-          placeholder="Select a task"
-          className="hover:bg-background"
-          classNames={{
-            base: "bg-background hover:bg-background",
-            mainWrapper: "bg-background",
-            trigger:
-              "bg-background border-2 border-neutral-200 dark:border-neutral-800 hover:bg-neutral-900",
-            listboxWrapper: "bg-background",
-            listbox: "bg-background",
+      {/* Main Content */}
+      <div className="p-6 pb-32">
+        <div className="mb-6">
+          <h1 className="text-3xl font-bold mb-2">AI Audio Generation</h1>
+          <p className="text-neutral-400">
+            Generate music and speech using AI models. Use the floating input
+            below for quick generation.
+          </p>
+        </div>
 
-            itemWrapper: "bg-background",
-            itemLabel: "bg-background",
-            itemDescription: "bg-background",
-            itemIcon: "bg-background",
-          }}
-        >
-          <SelectItem>Text to Speach</SelectItem>
-          <SelectItem>Text to Audio</SelectItem>
-        </Select>
-        <Select
-          size="lg"
-          placeholder="Select a model"
-          className="hover:bg-background"
-          classNames={{
-            base: "bg-background hover:bg-background",
-            mainWrapper: "bg-background",
-            trigger:
-              "bg-background border-2 border-neutral-200 dark:border-neutral-800 hover:bg-neutral-900",
-            listboxWrapper: "bg-background",
-            listbox: "bg-background",
-
-            itemWrapper: "bg-background",
-            itemLabel: "bg-background",
-            itemDescription: "bg-background",
-            itemIcon: "bg-background",
-          }}
-        >
-          <SelectItem>Text to Speach</SelectItem>
-          <SelectItem>Text to Audio</SelectItem>
-        </Select>
+        {/* Audio List */}
+        <AudioList />
       </div>
+
+      {/* Floating Input */}
+      <AudioFloatingInput />
     </div>
   );
 }
-
-const STYLES = {
-  ["floating-input"]:
-    "fixed bottom-10 left-1/2 -translate-x-1/2 shadow-2xl w-[40rem] h-42 rounded-xl bg-background border-neutral-200 dark:border-neutral-800 border-[1px] p-4 flex flex-col gap-2",
-
-  ["textarea"]: "bg-background w-full resize-none  p-2 rounded-md h-full",
-  ["footer"]: "flex justify-between items-center",
-};

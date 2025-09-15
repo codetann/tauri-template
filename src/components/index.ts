@@ -10,3 +10,6 @@ export { default as ImageGrid } from "./image-grid";
 export { default as FloatingInput } from "./floating-input";
 export { default as AdvancedSettingsDrawer } from "./advanced-settings-drawer";
 export { default as ImageSampleDataLoader } from "./image-sample-data";
+export { default as AudioList } from "./audio-list";
+export { default as AudioFloatingInput } from "./audio-floating-input";
+export { default as AudioSampleDataLoader } from "./audio-sample-data";

@@ -3,11 +3,16 @@ import { useEffect } from "react";
 
 // Component to add sample data for testing
 export default function SampleDataLoader() {
-  const { createConversation } = useConversationStore();
+  const { createConversation, conversations } = useConversationStore();
 
   useEffect(() => {
     // Only add sample data if no conversations exist
     const addSampleData = async () => {
+      // Check if there are already conversations - if so, don't add sample data
+      if (conversations.length > 0) {
+        return;
+      }
+
       try {
         await createConversation(
           {
@@ -44,7 +49,7 @@ export default function SampleDataLoader() {
     };
 
     addSampleData();
-  }, [createConversation]);
+  }, [createConversation, conversations.length]);
 
   return null; // This component doesn't render anything
 }
