@@ -6,3 +6,7 @@ export { default as ConversationList } from "./conversation-list";
 export { default as NewChatModal } from "./new-chat-modal";
 export { default as ChatInterface } from "./chat-interface";
 export { default as SampleDataLoader } from "./sample-data";
+export { default as ImageGrid } from "./image-grid";
+export { default as FloatingInput } from "./floating-input";
+export { default as AdvancedSettingsDrawer } from "./advanced-settings-drawer";
+export { default as ImageSampleDataLoader } from "./image-sample-data";

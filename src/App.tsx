@@ -7,6 +7,7 @@ import { Select, Slider, Switch } from "@heroui/react";
 import { Route, Routes } from "react-router-dom";
 import { TextPage } from "./pages/text-page";
 import { AudioPage } from "./pages";
+import ImagePage from "./pages/image-page";
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/text" element={<TextPage />} />
         <Route path="/audio" element={<AudioPage />} />
+        <Route path="/images" element={<ImagePage />} />
       </Routes>
     </Layout>
   );
