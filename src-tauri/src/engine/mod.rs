@@ -1,7 +1,5 @@
-use tauri::Manager;
-
 #[tauri::command]
-pub async fn create_tab(engine: String, container_id: String, url: String) -> Result<String, String> {
+pub async fn create_tab(engine: String, _container_id: String, url: String) -> Result<String, String> {
     println!("Creating tab in engine: {} -> {}", engine, url);
     Ok(format!("{}-tab-1", engine))
 }
@@ -37,7 +35,7 @@ pub async fn reload_tab(tab_id: String, hard: Option<bool>) -> Result<(), String
 }
 
 #[tauri::command]
-pub async fn get_nav_state(tab_id: String) -> Result<serde_json::Value, String> {
+pub async fn get_nav_state(_tab_id: String) -> Result<serde_json::Value, String> {
     Ok(serde_json::json!({
         "url": "about:blank",
         "canGoBack": false,

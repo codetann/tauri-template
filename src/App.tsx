@@ -4,6 +4,9 @@ import { invoke } from "@tauri-apps/api/core";
 import { Button, Layout, NavBar } from "@/components";
 import { useTheme } from "@heroui/use-theme";
 import { Select, Slider, Switch } from "@heroui/react";
+import { Route, Routes } from "react-router-dom";
+import { TextPage } from "./pages/text-page";
+import { AudioPage } from "./pages";
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -17,10 +20,10 @@ function App() {
 
   return (
     <Layout>
-      <Switch
-        isSelected={theme === "dark"}
-        onValueChange={(value) => setTheme(value ? "dark" : "light")}
-      />
+      <Routes>
+        <Route path="/text" element={<TextPage />} />
+        <Route path="/audio" element={<AudioPage />} />
+      </Routes>
     </Layout>
   );
 }

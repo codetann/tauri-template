@@ -9,9 +9,14 @@ import {
   BiVideo,
   BiWrench,
   BiMessage,
+  BiHomeAlt,
+  BiHomeAlt2,
+  BiSolidHome,
 } from "react-icons/bi";
 import { Button } from "../Button";
 import { SettingsModal } from "../settings-modal";
+import { useLocation, useNavigate } from "react-router-dom";
+import { colors } from "@/styles/variables";
 
 const navItems = [
   {
@@ -21,27 +26,27 @@ const navItems = [
   },
   {
     label: "Text",
-    href: "/",
+    href: "/text",
     icon: BiMessage,
   },
   {
     label: "Images",
-    href: "/",
+    href: "/images",
     icon: BiImage,
   },
   {
     label: "Audio",
-    href: "/",
+    href: "/audio",
     icon: BiMusic,
   },
   {
     label: "Video",
-    href: "/",
+    href: "/video",
     icon: BiVideo,
   },
   {
     label: "Tools",
-    href: "/",
+    href: "/tools",
     icon: BiWrench,
   },
   {
@@ -53,11 +58,15 @@ const navItems = [
 
 export default function NavBar() {
   const settingsModal = useDisclosure();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleNavItemClick = (href: string) => {
     if (href === "/settings") {
-      settingsModal.onOpen();
+      return settingsModal.onOpen();
     }
+
+    navigate(href);
   };
 
   return (
@@ -72,13 +81,26 @@ export default function NavBar() {
           <Button
             isIconOnly
             key={item.href}
-            className={styles.navItem}
+            className={`${styles["nav-item"]} ${
+              location.pathname === item.href ? styles["nav-item-active"] : ""
+            }`}
             color="default"
             variant="light"
-            size="lg"
+            size="md"
+            radius="full"
             onPress={() => handleNavItemClick(item.href)}
+            // style={{
+            //   color:
+            //     location.pathname === item.href
+            //       ? colors.primary.color
+            //       : "var(--color-white-alpha-700)",
+            //   backgroundColor:
+            //     location.pathname === item.href
+            //       ? colors.primary.color
+            //       : "transparent",
+            // }}
           >
-            <item.icon size={24} />
+            <item.icon size={20} />
           </Button>
         </Tooltip>
       ))}

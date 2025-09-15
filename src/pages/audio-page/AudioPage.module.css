@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.floating-input {
+  @apply fixed bottom-10 left-1/2 -translate-x-1/2 shadow-2xl w-[40rem] h-42 rounded-xl;
+}

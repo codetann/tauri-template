@@ -1,0 +1,306 @@
+/* Junicode Font Family - OpenType Fonts */
+
+/* Regular Weight */
+@font-face {
+  font-family: "Junicode";
+  src: url("./junicode/junicode-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode";
+  src: url("./junicode/junicode-italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Light Weight */
+@font-face {
+  font-family: "Junicode";
+  src: url("./junicode/junicode-light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode";
+  src: url("./junicode/junicode-lightitalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Medium Weight */
+@font-face {
+  font-family: "Junicode";
+  src: url("./junicode/junicode-medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode";
+  src: url("./junicode/junicode-mediumitalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Bold Weight */
+@font-face {
+  font-family: "Junicode";
+  src: url("./junicode/junicode-bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode";
+  src: url("./junicode/junicode-bolditalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Semi-Bold Weight */
+@font-face {
+  font-family: "Junicode";
+  src: url("./junicode/junicode-smbold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode";
+  src: url("./junicode/junicode-smbolditalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Condensed Variants */
+@font-face {
+  font-family: "Junicode Condensed";
+  src: url("./junicode/junicode-cond.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Condensed";
+  src: url("./junicode/junicode-conditalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Condensed";
+  src: url("./junicode/junicode-condlight.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Condensed";
+  src: url("./junicode/junicode-condlightitalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Condensed";
+  src: url("./junicode/junicode-condmedium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Condensed";
+  src: url("./junicode/junicode-condmediumitalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Semi-Condensed Variants */
+@font-face {
+  font-family: "Junicode Semi-Condensed";
+  src: url("./junicode/junicode-smcond.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Semi-Condensed";
+  src: url("./junicode/junicode-smconditalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Semi-Condensed";
+  src: url("./junicode/junicode-smcondlight.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Semi-Condensed";
+  src: url("./junicode/junicode-smcondlightitalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Semi-Condensed";
+  src: url("./junicode/junicode-smcondmedium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Semi-Condensed";
+  src: url("./junicode/junicode-smcondmediumitalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Semi-Expanded Variants */
+@font-face {
+  font-family: "Junicode Semi-Expanded";
+  src: url("./junicode/junicode-smexp.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Semi-Expanded";
+  src: url("./junicode/junicode-smexpitalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Semi-Expanded";
+  src: url("./junicode/junicode-smexpmedium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Semi-Expanded";
+  src: url("./junicode/junicode-smexpmediumitalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Semi-Expanded";
+  src: url("./junicode/junicode-smexpsmbold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Semi-Expanded";
+  src: url("./junicode/junicode-smexpsmbolditalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* TrueType Fonts (Legacy Support) */
+@font-face {
+  font-family: "Junicode";
+  src: url("./junicode/Junicode.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode";
+  src: url("./junicode/Junicode-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode";
+  src: url("./junicode/Junicode-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode";
+  src: url("./junicode/Junicode-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Condensed";
+  src: url("./junicode/Junicode-RegularCondensed.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Condensed";
+  src: url("./junicode/Junicode-ItalicCondensed.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Condensed";
+  src: url("./junicode/Junicode-BoldCondensed.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Junicode Condensed";
+  src: url("./junicode/Junicode-BoldItalicCondensed.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* CSS Custom Properties for easy usage */
+:root {
+  --font-junicode: "Junicode", serif;
+  --font-junicode-condensed: "Junicode Condensed", serif;
+  --font-junicode-semi-condensed: "Junicode Semi-Condensed", serif;
+  --font-junicode-semi-expanded: "Junicode Semi-Expanded", serif;
+}

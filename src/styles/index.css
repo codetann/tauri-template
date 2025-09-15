@@ -1,10 +1,44 @@
 @import "tailwindcss";
+@import "./fonts/fonts.css";
 @plugin './plugins/hero.ts';
 @plugin './plugins/custom.ts';
 /* Note: You may need to change the path to fit your project structure */
 @source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 @custom-variant dark (&:is(.dark *));
-
+h1 {
+  font-family: var(--font-junicode);
+  font-weight: 700;
+  @apply md:text-5xl lg:text-6xl;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-junicode);
+}
+h2 {
+  font-weight: 600;
+  @apply md:text-4xl lg:text-5xl;
+}
 h3 {
-  @apply text-xl font-semibold;
+  font-weight: 500;
+  @apply md:text-3xl lg:text-4xl;
+}
+h4 {
+  font-weight: 400;
+  @apply md:text-2xl lg:text-3xl;
+}
+h5 {
+  font-weight: 300;
+  @apply md:text-xl lg:text-2xl;
+}
+h6 {
+  font-weight: 200;
+  @apply md:text-lg lg:text-xl;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  @apply dark:opacity-70 text-small;
 }

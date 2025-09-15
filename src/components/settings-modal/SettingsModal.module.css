@@ -2,27 +2,52 @@
 
 .settings-modal {
   background-color: hsl(var(--heroui-background));
-  @apply py-4;
 }
 
 .settings-modal-nav {
   border-right: 1px solid var(--color-white-alpha-50);
-  @apply flex flex-col pr-6 gap-2;
+  @apply flex flex-col gap-2 p-4;
 }
 .settings-modal-nav-item {
-  @apply flex items-center justify-start gap-2 p-2 px-4 rounded-lg w-42 cursor-pointer transition-all duration-300;
+  @apply flex items-center justify-start text-sm gap-2 p-2 px-2 rounded-lg w-42 cursor-pointer;
   &:hover {
     background-color: var(--color-white-alpha-50);
   }
 }
 .settings-modal-nav-item-active {
-  background-color: hsl(var(--heroui-primary));
-  color: white;
+  color: hsl(var(--heroui-primary));
+
+  background-color: var(--color-white-alpha-50);
+  opacity: 1 !important;
   &:hover {
-    background-color: hsl(var(--heroui-primary));
+    background-color: var(--color-white-alpha-50);
   }
 }
 
 .settings-content {
-  @apply flex flex-col px-6 w-full;
+  @apply flex flex-col w-full h-full relative;
+}
+
+.settings-content-wrapper {
+  @apply w-full flex flex-col absolute top-0 left-0;
+}
+
+.settings-content-body {
+  @apply flex flex-col gap-2 w-full;
+}
+
+.settings-content-header {
+  @apply p-4;
+  & h4 {
+    @apply text-2xl;
+  }
+}
+
+.settings-content-row {
+  @apply p-4 flex flex-row;
+  border-top: 1px solid var(--color-white-alpha-50);
+  @apply flex items-center justify-between  w-full py-2;
+  &:last-child {
+    border-bottom: none;
+  }
 }
