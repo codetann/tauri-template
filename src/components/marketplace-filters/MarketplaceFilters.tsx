@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Card,
   CardBody,
@@ -75,55 +75,57 @@ export default function MarketplaceFilters({
     }
   };
 
+  useEffect(() => {
+    console.log(selectedCategory);
+  }, [selectedCategory]);
+
   return (
     <div className="space-y-4">
       {/* Main Filters */}
       <Card className="bg-neutral-800/50">
-        <CardBody className="p-4">
-          <div className="flex flex-col lg:flex-row gap-4">
-            {/* Search */}
-            <Input
-              placeholder="Search models..."
-              value={searchQuery}
-              onValueChange={setSearchQuery}
-              startContent={<BiSearch />}
-              className="flex-1"
+        <CardBody className="p-4 gap-4">
+          {/* Category Tabs */}
+          <div className="flex-1">
+            <Tabs
+              selectedKey={selectedCategory}
+              onSelectionChange={(key) => setSelectedCategory(key as string)}
+              variant="underlined"
               classNames={{
-                inputWrapper: "bg-background border-neutral-700",
+                tabList: "gap-2 w-full relative rounded-none p-0 ",
+                cursor: "w-full bg-primary",
+                tab: "max-w-fit px-0 h-12",
+                tabContent: "group-data-[selected=true]:text-primary",
               }}
-            />
-
-            {/* Category Tabs */}
-            <div className="flex-1">
-              <Tabs
-                selectedKey={selectedCategory}
-                onSelectionChange={(key) => setSelectedCategory(key as string)}
-                variant="underlined"
-                classNames={{
-                  tabList:
-                    "gap-6 w-full relative rounded-none p-0 border-b border-divider",
-                  cursor: "w-full bg-primary",
-                  tab: "max-w-fit px-0 h-12",
-                  tabContent: "group-data-[selected=true]:text-primary",
-                }}
-              >
-                {categories.map((category) => (
-                  <Tab
-                    key={category.id}
-                    title={
-                      <div className="flex items-center gap-2">
-                        <span>{category.icon}</span>
-                        <span>{category.name}</span>
-                        <Chip size="sm" variant="flat" color="default">
-                          {category.count}
-                        </Chip>
-                      </div>
-                    }
-                  />
-                ))}
-              </Tabs>
-            </div>
-
+            >
+              {categories.map((category) => (
+                <Tab
+                  key={category.id}
+                  title={
+                    <div
+                      className="flex items-center gap-2 rounded-lg px-1.5 py-1"
+                      style={{
+                        backgroundColor:
+                          selectedCategory === category.id
+                            ? "hsl(var(--heroui-primary))"
+                            : "transparent",
+                        color:
+                          selectedCategory === category.id
+                            ? "hsl(var(--heroui-primary-foreground))"
+                            : "default",
+                      }}
+                    >
+                      <span>{category.icon}</span>
+                      <span>{category.name}</span>
+                      <Chip size="sm" variant="flat" color="default">
+                        {category.count}
+                      </Chip>
+                    </div>
+                  }
+                />
+              ))}
+            </Tabs>
+          </div>
+          <div className="flex flex-col lg:flex-row gap-4">
             {/* View Switcher */}
             <div className="flex gap-1 bg-neutral-800 rounded-lg p-1">
               <Button
@@ -131,6 +133,16 @@ export default function MarketplaceFilters({
                 size="sm"
                 variant={viewMode === "grid" ? "solid" : "light"}
                 color={viewMode === "grid" ? "primary" : "default"}
+                style={{
+                  backgroundColor:
+                    viewMode === "grid"
+                      ? "hsl(var(--heroui-primary))"
+                      : "transparent",
+                  color:
+                    viewMode === "grid"
+                      ? "hsl(var(--heroui-primary-foreground))"
+                      : "default",
+                }}
                 onPress={() => setViewMode("grid")}
               >
                 <BiGridAlt />
@@ -140,6 +152,16 @@ export default function MarketplaceFilters({
                 size="sm"
                 variant={viewMode === "list" ? "solid" : "light"}
                 color={viewMode === "list" ? "primary" : "default"}
+                style={{
+                  backgroundColor:
+                    viewMode === "list"
+                      ? "hsl(var(--heroui-primary))"
+                      : "transparent",
+                  color:
+                    viewMode === "list"
+                      ? "hsl(var(--heroui-primary-foreground))"
+                      : "default",
+                }}
                 onPress={() => setViewMode("list")}
               >
                 <BiListUl />
@@ -173,6 +195,17 @@ export default function MarketplaceFilters({
                 Filters
               </Button>
             </div>
+            {/* Search */}
+            <Input
+              placeholder="Search models..."
+              value={searchQuery}
+              onValueChange={setSearchQuery}
+              startContent={<BiSearch />}
+              className="flex-1"
+              classNames={{
+                inputWrapper: "bg-background border-neutral-700",
+              }}
+            />
           </div>
         </CardBody>
       </Card>
@@ -248,7 +281,7 @@ export default function MarketplaceFilters({
       )}
 
       {/* Quick Stats */}
-      <div className="flex gap-4">
+      <div className="flex gap-4 hidden">
         <Card className="bg-neutral-800/50 flex-1">
           <CardBody className="p-3">
             <div className="flex items-center justify-between">

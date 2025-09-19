@@ -33,7 +33,7 @@ export default function ImagePage() {
       {/* Main Content */}
       <div className="p-6 pb-32">
         <div className="mb-6">
-          <h1 className="text-3xl font-bold mb-2">AI Image Generation</h1>
+          <h1 className="text-3xl font-bold mb-2">Images</h1>
           <p className="text-neutral-400">
             Generate stunning images using AI models. Use the floating input
             below for quick generation or open advanced settings for more

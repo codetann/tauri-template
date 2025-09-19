@@ -122,7 +122,7 @@ export default function ModelCard({
 
     return (
       <Button
-        color="primary"
+        color="default"
         startContent={<BiDownload />}
         onPress={handleAction}
       >

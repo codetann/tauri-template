@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { invoke } from "@tauri-apps/api/core";
+import { BiChat, BiImage, BiMusic, BiPackage, BiVideo } from "react-icons/bi";
 
 export interface MarketplaceModel {
   id: string;
@@ -37,7 +38,7 @@ export interface ModelCategory {
   id: string;
   name: string;
   description: string;
-  icon: string;
+  icon: React.ReactNode;
   count: number;
 }
 
@@ -102,35 +103,35 @@ export const useMarketplaceStore = create<MarketplaceStore>((set, get) => ({
       id: "all",
       name: "All Models",
       description: "Browse all available models",
-      icon: "📦",
+      icon: BiPackage({}),
       count: 0,
     },
     {
       id: "text",
       name: "Text Models",
       description: "Language models for text generation",
-      icon: "📝",
+      icon: BiChat({}),
       count: 0,
     },
     {
       id: "image",
       name: "Image Models",
       description: "Models for image generation",
-      icon: "🎨",
+      icon: BiImage({}),
       count: 0,
     },
     {
       id: "audio",
       name: "Audio Models",
       description: "Models for audio generation",
-      icon: "🎵",
+      icon: BiMusic({}),
       count: 0,
     },
     {
       id: "video",
       name: "Video Models",
       description: "Models for video generation",
-      icon: "🎬",
+      icon: BiVideo({}),
       count: 0,
     },
   ],

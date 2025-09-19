@@ -21,7 +21,7 @@ export default function TextPage() {
   };
 
   return (
-    <div className="w-full h-full flex gap-4 p-4">
+    <div className="w-full h-full flex gap-4">
       {/* Load sample data for development */}
       <SampleDataLoader />
 

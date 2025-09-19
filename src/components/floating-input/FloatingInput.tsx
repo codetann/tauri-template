@@ -92,6 +92,12 @@ export default function FloatingInput({
                   variant={generationType === type.key ? "solid" : "light"}
                   color={generationType === type.key ? "primary" : "default"}
                   className="min-w-0 px-2"
+                  style={{
+                    backgroundColor:
+                      generationType === type.key
+                        ? "hsl(var(--heroui-primary))"
+                        : "transparent",
+                  }}
                   onPress={() => setGenerationType(type.key)}
                 >
                   <Icon size={16} />

@@ -119,6 +119,10 @@ export default function ConversationList({ onNewChat }: ConversationListProps) {
             variant="flat"
             size="sm"
             onPress={onNewChat}
+            style={{
+              backgroundColor: "hsl(var(--heroui-primary))",
+              color: "hsl(var(--heroui-primary-foreground))",
+            }}
           >
             <BiPlus size={18} />
           </Button>
@@ -166,7 +170,7 @@ export default function ConversationList({ onNewChat }: ConversationListProps) {
                     key={conversation.id}
                     className={`p-3 rounded-lg cursor-pointer transition-colors ${
                       isActive
-                        ? "bg-primary/20 border border-primary/30"
+                        ? "bg-white/5"
                         : "hover:bg-neutral-800/50 border border-transparent"
                     }`}
                     onClick={() => handleConversationClick(conversation.id)}
@@ -242,7 +246,7 @@ export default function ConversationList({ onNewChat }: ConversationListProps) {
                         )}
                       </div>
 
-                      {!isEditing && (
+                      {/* {!isEditing && (
                         <div className="flex items-center gap-1 ml-2">
                           <Button
                             isIconOnly
@@ -264,7 +268,7 @@ export default function ConversationList({ onNewChat }: ConversationListProps) {
                             <BiTrash size={12} />
                           </Button>
                         </div>
-                      )}
+                      )} */}
                     </div>
                   </div>
                 );
@@ -276,7 +280,11 @@ export default function ConversationList({ onNewChat }: ConversationListProps) {
         {/* Footer */}
         <div className="mt-4 pt-4 border-t border-neutral-700">
           <Button
-            color="primary"
+            color="default"
+            style={{
+              backgroundColor: "hsl(var(--heroui-primary))",
+              color: "hsl(var(--heroui-primary-foreground))",
+            }}
             variant="flat"
             className="w-full"
             startContent={<BiPlus />}

@@ -35,7 +35,7 @@ function LayoutHeader() {
   return (
     <header className={styles["layout-header"]}>
       <div className={styles["layout-header-left"]}>
-        <LuCircleSlash2 size={20} className="text-primary pb-1 " />
+        <LuCircleSlash2 size={20} className="primary.color pb-1 " />
 
         <h5 className={styles["layout-header-title"]}>
           Play<i className="text-sm">(</i>

@@ -1,28 +1,23 @@
 import {
   Modal,
   ModalContent,
-  ModalHeader,
   ModalBody,
-  Select,
-  SelectItem,
   useSwitch,
   VisuallyHidden,
 } from "@heroui/react";
 import styles from "./SettingsModal.module.css";
 import {
   BiCog,
-  BiError,
   BiLayer,
   BiMoon,
   BiPaint,
-  BiHelpCircle,
   BiSun,
-  BiWrench,
   BiInfoCircle,
 } from "react-icons/bi";
 import { useState } from "react";
 import { useTheme } from "@heroui/use-theme";
 import { AnimatePresence, motion } from "framer-motion";
+import { useThemeContext } from "@/contexts/ThemeContext";
 
 const settingsNavItems = [
   {
@@ -53,8 +48,8 @@ interface SettingsModalProps {
 }
 
 export default function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
-  const { theme, setTheme } = useTheme();
   const [activeTab, setActiveTab] = useState(settingsNavItems[0].key);
+  const { primaryColor, setPrimaryColor } = useThemeContext();
 
   return (
     <Modal
@@ -153,6 +148,18 @@ export default function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                             <p>Theme</p>
                             <ThemeSwitch />
                           </div>
+                          <div className={styles["settings-content-row"]}>
+                            <div className="flex flex-col gap-1">
+                              <p>Primary Color</p>
+                              <p className="text-xs text-default-500">
+                                Choose your primary color for the application
+                              </p>
+                            </div>
+                            <PrimaryColorPicker
+                              color={primaryColor}
+                              onChange={setPrimaryColor}
+                            />
+                          </div>
                         </div>
                       </motion.div>
                     )}
@@ -207,18 +214,12 @@ export default function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
   );
 }
 
-const ThemeSwitch = (props) => {
-  const {
-    Component,
-    slots,
-    isSelected,
-    getBaseProps,
-    getInputProps,
-    getWrapperProps,
-  } = useSwitch(props);
+const ThemeSwitch = () => {
+  const { Component, slots, getBaseProps, getInputProps, getWrapperProps } =
+    useSwitch({});
   const { theme, setTheme } = useTheme();
 
-  const handleThemeChange = (e: any) => {
+  const handleThemeChange = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
@@ -242,6 +243,60 @@ const ThemeSwitch = (props) => {
           {theme === "light" ? <BiSun color="white" /> : <BiMoon />}
         </div>
       </Component>
+    </div>
+  );
+};
+
+interface PrimaryColorPickerProps {
+  color: string;
+  onChange: (color: string) => void;
+}
+
+const PrimaryColorPicker = ({ color, onChange }: PrimaryColorPickerProps) => {
+  const predefinedColors = [
+    "#f76f53", // Original orange
+    "#3182ce", // Blue
+    "#38a169", // Green
+    "#d53f8c", // Pink
+    "#805ad5", // Purple
+    "#dd6b20", // Orange
+    "#e53e3e", // Red
+    "#319795", // Teal
+    "#d69e2e", // Yellow
+    "#4c51bf", // Indigo
+  ];
+
+  return (
+    <div className="flex flex-col gap-3">
+      <div className="flex items-center gap-3">
+        <input
+          type="color"
+          value={color}
+          onChange={(e) => onChange(e.target.value)}
+          className={`w-12 h-12 rounded-lg border-2 border-default-200 cursor-pointer ${styles["color-picker-input"]}`}
+          style={{ backgroundColor: color }}
+        />
+        <div className="flex flex-col">
+          <span className="text-sm font-medium">{color.toUpperCase()}</span>
+          <span className="text-xs text-default-500">Custom color</span>
+        </div>
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        {predefinedColors.map((predefinedColor) => (
+          <button
+            key={predefinedColor}
+            onClick={() => onChange(predefinedColor)}
+            className={`w-8 h-8 rounded-lg border-2 transition-all duration-200 hover:scale-110 ${
+              color === predefinedColor
+                ? "border-primary ring-2 ring-primary/20"
+                : "border-default-200 hover:border-default-300"
+            }`}
+            style={{ backgroundColor: predefinedColor }}
+            title={predefinedColor}
+          />
+        ))}
+      </div>
     </div>
   );
 };

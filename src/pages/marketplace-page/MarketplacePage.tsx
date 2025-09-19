@@ -29,10 +29,10 @@ export default function MarketplacePage() {
 
   return (
     <div className="w-full h-full">
-      <div className="p-6">
+      <div className="p-0">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-3xl font-bold mb-2">AI Model Marketplace</h1>
+          <h1 className="text-3xl font-bold mb-2">Marketplace</h1>
           <p className="text-neutral-400">
             Discover, download, and manage AI models for text, image, audio, and
             video generation. All models are free and ready to use.
@@ -42,9 +42,9 @@ export default function MarketplacePage() {
         {/* Tab Navigation */}
         <div className="flex gap-2 mb-6">
           <button
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+            className={`px-4 py-2 rounded-lg font-medium transition-colors cursor-pointer ${
               activeTab === "browse"
-                ? "bg-primary text-white"
+                ? "bg-[hsl(var(--heroui-primary))] text-white"
                 : "bg-neutral-800 text-neutral-300 hover:bg-neutral-700"
             }`}
             onClick={() => setActiveTab("browse")}
@@ -52,9 +52,9 @@ export default function MarketplacePage() {
             Browse Models
           </button>
           <button
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+            className={`px-4 py-2 rounded-lg font-medium transition-colors cursor-pointer ${
               activeTab === "manage"
-                ? "bg-primary text-white"
+                ? "bg-[hsl(var(--heroui-primary))] text-white"
                 : "bg-neutral-800 text-neutral-300 hover:bg-neutral-700"
             }`}
             onClick={() => setActiveTab("manage")}

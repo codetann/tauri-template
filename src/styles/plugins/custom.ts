@@ -15,6 +15,12 @@ const customPlugin = plugin(({ addBase }) => {
       "--color-white-alpha-700": colors.whiteAlpha[700],
       "--color-white-alpha-800": colors.whiteAlpha[800],
       "--color-white-alpha-900": colors.whiteAlpha[900],
+      "--primary-color": colors.primary.color,
+      "--primary-color-light": colors.primary.color,
+      "--primary-color-dark": colors.primary.color,
+      // HeroUI CSS variables
+      "--heroui-primary": "247 111 83", // Default orange in HSL format
+      "--heroui-primary-foreground": "255 255 255",
     },
   });
 });
