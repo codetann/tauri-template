@@ -5,7 +5,7 @@
 /* Note: You may need to change the path to fit your project structure */
 @source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 @custom-variant dark (&:is(.dark *));
-h1 {
+/* h1 {
   font-family: var(--font-junicode);
   font-weight: 700;
   @apply md:text-5xl lg:text-6xl;
@@ -41,4 +41,4 @@ h6 {
 p {
   font-family: "Inter", sans-serif;
   @apply dark:opacity-70 text-small;
-}
+} */

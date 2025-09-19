@@ -12,6 +12,7 @@ import {
   BiHomeAlt,
   BiHomeAlt2,
   BiSolidHome,
+  BiShoppingBag,
 } from "react-icons/bi";
 import { Button } from "../Button";
 import { SettingsModal } from "../settings-modal";
@@ -43,6 +44,11 @@ const navItems = [
     label: "Video",
     href: "/video",
     icon: BiVideo,
+  },
+  {
+    label: "Marketplace",
+    href: "/marketplace",
+    icon: BiShoppingBag,
   },
   {
     label: "Tools",

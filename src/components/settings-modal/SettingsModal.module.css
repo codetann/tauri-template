@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .settings-modal {
-  background-color: hsl(var(--heroui-background));
+  /* background-color: hsl(var(--heroui-background)); */
 }
 
 .settings-modal-nav {

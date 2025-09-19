@@ -225,6 +225,7 @@ export default function NewChatModal({
                     step={0.1}
                     className="w-full"
                     color="primary"
+                    size="sm"
                   />
                 </div>
 
@@ -250,6 +251,7 @@ export default function NewChatModal({
                     step={100}
                     className="w-full"
                     color="primary"
+                    size="sm"
                   />
                 </div>
 
@@ -276,6 +278,7 @@ export default function NewChatModal({
                     step={0.1}
                     className="w-full"
                     color="primary"
+                    size="sm"
                   />
                 </div>
 
@@ -301,6 +304,7 @@ export default function NewChatModal({
                     step={0.1}
                     className="w-full"
                     color="primary"
+                    size="sm"
                   />
                 </div>
 
@@ -326,6 +330,7 @@ export default function NewChatModal({
                     step={0.1}
                     className="w-full"
                     color="primary"
+                    size="sm"
                   />
                 </div>
               </CardBody>
