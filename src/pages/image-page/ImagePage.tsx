@@ -6,6 +6,7 @@ import {
   ImageSampleDataLoader,
 } from "@/components";
 import { useImageStore } from "@/state/imageStore";
+import { Page } from "@/components";
 
 export default function ImagePage() {
   const { loadModels, loadLoras } = useImageStore();
@@ -26,7 +27,7 @@ export default function ImagePage() {
   };
 
   return (
-    <div className="w-full h-full relative">
+    <Page>
       {/* Load sample data for development */}
       <ImageSampleDataLoader />
 
@@ -55,6 +56,6 @@ export default function ImagePage() {
         isOpen={isAdvancedDrawerOpen}
         onClose={handleCloseAdvancedSettings}
       />
-    </div>
+    </Page>
   );
 }

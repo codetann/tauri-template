@@ -18,7 +18,7 @@
   @apply flex items-center justify-center  gap-2 w-full text-sm;
 }
 .layout-header-title {
-  @apply tracking-wide flex items-center justify-center;
+  @apply tracking-wide flex items-center justify-center text-xl;
 
   line-height: 0;
   margin: 0;

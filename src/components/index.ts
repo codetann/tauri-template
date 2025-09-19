@@ -19,3 +19,4 @@ export { default as MarketplaceList } from "./marketplace-list";
 export { default as ModelCard } from "./model-card";
 export { default as ModelManagement } from "./model-management";
 export { default as CustomModelImport } from "./custom-model-import";
+export * from "./page";

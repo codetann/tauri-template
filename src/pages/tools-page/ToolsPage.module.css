@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+.tools-page {
+  @apply w-full h-full flex relative;
+}
+
+.tools-menu {
+  @apply w-64 bg-default-50 border-r border-default-200 flex flex-col h-full;
+}
+
+.tools-menu-header {
+  @apply p-4 border-b border-default-200;
+}
+
+.tools-menu-list {
+  @apply flex-1 p-2 space-y-1;
+}
+
+.tool-item {
+  @apply w-full p-3 rounded-lg text-left transition-all duration-200 group;
+}
+
+.tool-item-active {
+  @apply bg-primary text-primary-foreground shadow-sm;
+}
+
+.tool-item-inactive {
+  @apply hover:bg-default-100 text-default-700;
+}
+
+.tool-icon {
+  @apply text-lg;
+}
+
+.tool-icon-active {
+  @apply text-primary-foreground;
+}
+
+.tool-icon-inactive {
+  @apply text-default-500;
+}
+
+.tool-shortcut {
+  @apply text-xs px-2 py-1 rounded;
+}
+
+.tool-shortcut-active {
+  @apply bg-primary-foreground/20 text-primary-foreground;
+}
+
+.tool-shortcut-inactive {
+  @apply bg-default-200 text-default-500;
+}
+
+.tool-description {
+  @apply text-xs mt-1;
+}
+
+.tool-description-active {
+  @apply text-primary-foreground/80;
+}
+
+.tool-description-inactive {
+  @apply text-default-400;
+}
+
+.quick-actions {
+  @apply p-4 border-t border-default-200;
+}
+
+.quick-action-button {
+  @apply w-full p-2 rounded-lg bg-default-100 hover:bg-default-200 transition-colors flex items-center gap-2 text-sm text-default-700;
+}
+
+.main-tool-area {
+  @apply flex-1 relative;
+}
+
+.floating-prompt {
+  @apply fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50;
+}
+
+.floating-prompt-container {
+  @apply bg-white border border-default-200 rounded-2xl shadow-lg p-4 min-w-96 max-w-2xl;
+}
+
+.inpaint-settings {
+  @apply fixed bottom-24 left-1/2 transform -translate-x-1/2 z-40;
+}
+
+.inpaint-settings-container {
+  @apply bg-white border border-default-200 rounded-2xl shadow-lg p-6 min-w-96 max-w-lg;
+}
+
+.canvas-container {
+  @apply w-full h-full flex items-center justify-center p-4;
+}
+
+.canvas-wrapper {
+  @apply relative border border-default-200 rounded-lg overflow-hidden shadow-lg;
+}
+
+.canvas {
+  @apply max-w-full max-h-full block;
+}
+
+.toolbar {
+  @apply flex items-center justify-between p-4 bg-white border-b border-default-200;
+}
+
+.tool-selection {
+  @apply flex items-center gap-2;
+}
+
+.tool-button {
+  @apply p-2 rounded-lg transition-colors;
+}
+
+.tool-button-active {
+  @apply bg-primary text-primary-foreground;
+}
+
+.tool-button-inactive {
+  @apply bg-default-100 hover:bg-default-200 text-default-700;
+}
+
+.brush-controls {
+  @apply flex items-center gap-2;
+}
+
+.zoom-controls {
+  @apply flex items-center gap-2;
+}
+
+.status-bar {
+  @apply flex items-center justify-between p-2 bg-white border-t border-default-200 text-sm text-default-600;
+}

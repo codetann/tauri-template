@@ -4,6 +4,7 @@ import {
   NewChatModal,
   ChatInterface,
   SampleDataLoader,
+  Page,
 } from "@/components";
 import { useConversationStore } from "@/state/conversationStore";
 
@@ -21,7 +22,7 @@ export default function TextPage() {
   };
 
   return (
-    <div className="w-full h-full flex gap-4 p-4">
+    <Page>
       {/* Load sample data for development */}
       <SampleDataLoader />
 
@@ -37,6 +38,6 @@ export default function TextPage() {
         onClose={() => setIsNewChatModalOpen(false)}
         onCreateChat={handleCreateChat}
       />
-    </div>
+    </Page>
   );
 }

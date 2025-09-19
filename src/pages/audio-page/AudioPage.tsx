@@ -3,6 +3,7 @@ import {
   AudioList,
   AudioFloatingInput,
   AudioSampleDataLoader,
+  Page,
 } from "@/components";
 import { useAudioStore } from "@/state/audioStore";
 
@@ -15,7 +16,7 @@ export default function AudioPage() {
   }, [loadModels]);
 
   return (
-    <div className="w-full h-full relative">
+    <Page>
       {/* Sample Data Loader for Development */}
       <AudioSampleDataLoader />
 
@@ -35,6 +36,6 @@ export default function AudioPage() {
 
       {/* Floating Input */}
       <AudioFloatingInput />
-    </div>
+    </Page>
   );
 }

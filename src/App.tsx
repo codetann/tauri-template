@@ -1,32 +1,23 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/core";
-import { Button, Layout, NavBar } from "@/components";
-import { useTheme } from "@heroui/use-theme";
-import { Select, Slider, Switch } from "@heroui/react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { Layout } from "@/components";
 import { TextPage } from "./pages/text-page";
-import { AudioPage, MarketplacePage } from "./pages";
+import { AudioPage, MarketplacePage, ToolsPage } from "./pages";
 import ImagePage from "./pages/image-page";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
-  const { theme, setTheme } = useTheme();
-  const [name, setName] = useState("");
-
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name }));
-  }
-
+  const location = useLocation();
   return (
     <Layout>
-      <Routes>
-        <Route path="/text" element={<TextPage />} />
-        <Route path="/audio" element={<AudioPage />} />
-        <Route path="/images" element={<ImagePage />} />
-        <Route path="/marketplace" element={<MarketplacePage />} />
-      </Routes>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/text" element={<TextPage />} />
+          <Route path="/audio" element={<AudioPage />} />
+          <Route path="/images" element={<ImagePage />} />
+          <Route path="/marketplace" element={<MarketplacePage />} />
+          <Route path="/tools" element={<ToolsPage />} />
+        </Routes>
+      </AnimatePresence>
     </Layout>
   );
 }
